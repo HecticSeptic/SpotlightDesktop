@@ -10,7 +10,7 @@ Allows you to set a task through the Windows Task Scheduler to update a folder w
 * Administrative Privileges (probably)
 
 ## Steps
-1. Place the `Spotlight.ps1` and `Spotlight.vbs` files wherever you like 
+1. Place the [`Spotlight.ps1`](./Spotlight.ps1) and [`Spotlight.vbs`](./Spotlight.vbs) files wherever you like
    * (default suggestion is `%UserProfile%/Pictures/Saved Pictures`)
 2. Edit the User Defined variables to your liking (make sure the syntax is retained)
    * `Spotlight.vbs` -> PSLocation must point to the location of your Spotlight.ps1 file
