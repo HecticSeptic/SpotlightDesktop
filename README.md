@@ -18,7 +18,7 @@ Allows you to set a task through the Windows Task Scheduler to update a folder w
      * `$landscapeOnly` -> default `$TRUE;` whether to omit vertical/portrait images
      * `$keepAll` -> default `$TRUE;` retain all images satisfying minSize
      * `$minSize` -> default `450kb;` the filesize below which images will not be copied
-     * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` remember your chosen path for step 4 
+     * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` remember for step 4 
      * `$backgroundLocation` = `"$($env:UserProfile)\Pictures\Saved Pictures\Spotlight\";` as above
 3. Add a task to Windows Task Scheduler
    * Windows/Start -> start typing Scheduler, or run %windir%\system32\taskschd.msc /s
