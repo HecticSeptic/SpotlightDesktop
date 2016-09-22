@@ -2,12 +2,11 @@
 ####Windows Spotlight on the Desktop
 
 ## What it does
-Allows you to set a task through the Windows Task Scheduler to update a folder with a single "`background.jpg`" file which mirrors the Spotlight background, or alternatively a growing directory of Spotlight images as they get added to your PC. This results in Spotlight images on your desktop.  
+Allows you to set a task through the Windows Task Scheduler to replace your Desktop background with the Spotlight background, or alternatively with a number of such backgrounds saved over the course of using this script. In the latter case, the backgrounds are saved to a user configurable folder.
 
 ## Prerequisites
 * Powershell (comes with Windows)
 * Visual Basic Script (comes with Windows)
-* Administrative Privileges (probably)  
 
 ## Steps
 1. Place the [`Spotlight.ps1`](./Spotlight.ps1) and [`Spotlight.vbs`](./Spotlight.vbs) files wherever you like
@@ -20,16 +19,16 @@ Allows you to set a task through the Windows Task Scheduler to update a folder w
      * `$keepAll` -> default `$TRUE;` retain all images satisfying minSize
      * `$minSize` -> default `450kb;` the filesize below which images will not be copied
      * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` remember for step 4 
-     * `$backgroundLocation` = `"$($env:UserProfile)\Pictures\Saved Pictures\Spotlight\";` as above  
+     * `$backgroundLocation` = `"$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";` where image is stored. Includes file name unlike above  
 
 3. Add a task to Windows Task Scheduler
    * Windows/Start -> start typing Scheduler, or run %windir%\system32\taskschd.msc /s
    * Action -> Create Task...
-   * Name and Triggers as you like
+   * Name and Triggers as you like (suggested: workstation unlock)
    * Actions -> New... -> Start a Program
    * Program/Script = `"%SystemRoot%\System32\WScript.exe"`
    * Add arguments = `"%userprofile%\Pictures\Saved Pictures\Spotlight.vbs"` (or whichever location you used)  
 
-4. Set your Desktop Background to Slideshow, with the folder of either `$imageLocation` or `$backgroundLocation`
+4. (Optional) Set your Desktop Background to Slideshow, with the folder of `$imageLocation`
    * Right-click desktop on Windows 8/10 -> Personalize -> Background = Slideshow; Browse -> to location
    * Or, Windows/Start -> start typing Background, then as above 
