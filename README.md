@@ -17,7 +17,8 @@ Allows you to set a task through the Windows Task Scheduler to replace your Desk
    * `Spotlight.ps1` -> Can be left as default, `$keepAll` does not override `$landscapeOnly`, default paths use `$($env:UserProfile)` which can be replaced with `[`Drive Letter`]\Users\[`You`]` if necessary. [Other $env options](http://www.computerperformance.co.uk/powershell/powershell_environmental_variables.htm).
      * `$landscapeOnly` -> default `$TRUE;` whether to omit vertical/portrait images
      * `$keepAll` -> default `$TRUE;` retain all images satisfying minSize
-     * `$minSize` -> default `450kb;` the filesize below which images will not be copied
+     * `$removeTips` -> default `$TRUE;` whether to delete Spotlight tips
+     * `$minSize` -> default `200kb;` the file size below which images will not be copied
      * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` remember for step 4 
      * `$backgroundLocation` = `"$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";` where image is stored. Includes file name unlike above  
 
