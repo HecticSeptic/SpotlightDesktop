@@ -25,7 +25,7 @@ Allows you to set a task through the Windows Task Scheduler to replace your Desk
 3. Add a task to Windows Task Scheduler
    * Windows/Start -> start typing Scheduler, or run %windir%\system32\taskschd.msc /s
    * Action -> Create Task...
-   * Name and Triggers as you like (suggested: workstation unlock)
+   * Name and Triggers as you like (suggested: on workstation lock)
    * Actions -> New... -> Start a Program
    * Program/Script = `"%SystemRoot%\System32\WScript.exe"`
    * Add arguments = `"%userprofile%\Pictures\Saved Pictures\Spotlight.vbs"` (or whichever location you used)  
