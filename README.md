@@ -19,8 +19,8 @@ Allows you to set a task through the Windows Task Scheduler to replace your Desk
      * `$keepAll` -> default `$TRUE;` retain all images satisfying minSize
      * `$removeTips` -> default `$TRUE;` whether to delete Spotlight tips
      * `$minSize` -> default `200kb;` the file size below which images will not be copied
-     * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` remember for step 4 
-     * `$backgroundLocation` = `"$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";` where image is stored. Includes file name unlike above  
+     * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` where to save images 
+     * `$backgroundLocation` = `"$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";` where current wallpaper is stored. Includes file name unlike above  
 
 3. Add a task to Windows Task Scheduler
    * Windows/Start -> start typing Scheduler, or run %windir%\system32\taskschd.msc /s
