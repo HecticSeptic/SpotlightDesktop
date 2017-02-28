@@ -5,13 +5,14 @@ Add-Type -AssemblyName System.Windows.Forms;
 ##
 
 ##User Defined
-##               Note: this script only works for horizontal/landscape images or both
+##Note: this script only works for horizontal/landscape images or both, tips only removed after being set
 $landscapeOnly = $TRUE; #$TRUE or $FALSE    | whether to omit vertical/portrait images
 $keepAll = $TRUE;       #$TRUE or $FALSE    | retain all images satisfying minSize
-$removeTips = $TRUE;    #$TRUE or $FALSE    | deletes tip data to only show background
+$removeTips = $TRUE;    #$TRUE or $FALSE    | deletes tip data from registry to only show background
 $minSize = 200kb;       #any valid filesize | point at which images are ignored
 $imageLocation = "$($env:UserProfile)\Pictures\Saved Pictures\";
-$backgroundLocation = "$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";
+$backgroundFolder = "$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes";
+$backgroundLocation = "$($backgroundFolder)\TranscodedWallpaper";
 ##                      #any valid location | where to save the images. Default includes
 ##                      #including quotes   | environment variable for Home. Keep (\)
 ##
@@ -81,6 +82,9 @@ foreach($file in (Get-Item -Path `
     }
 }
 ##update of wallpaper
+##Setting to nothing first as per 
+##http://stackoverflow.com/questions/7309943/c-set-desktop-wallpaper-to-a-solid-color
+[Wallpaper.Setter]::SetWallpaper("")
 [Wallpaper.Setter]::SetWallpaper("$($backgroundLocation)")
 ##
 ##Remove Spotlight tips

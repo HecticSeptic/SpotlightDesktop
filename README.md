@@ -4,8 +4,12 @@
 ## What it does
 Allows you to set a task through the Windows Task Scheduler to replace your Desktop background with the Spotlight background, or alternatively with a number of such backgrounds saved over the course of using this script. In the latter case, the backgrounds are saved to a user configurable folder.
 
+It is now possible to set the wallpaper even when desktop slideshow is enabled. In this configuration the background is set to the current Spotlight image upon login/logout (see 3.) and then continues to change automatically as normal.
+
+Note that if `$removeTips` is enabled, Spotlight tips may only be removed after they are first set (during logout). They are therefore only gone from the second viewing and onward, since they are cached elsewhere.
+
 ## Prerequisites
-* Powershell (comes with Windows)
+* PowerShell (comes with Windows)
 * Visual Basic Script (comes with Windows)
 
 ## Steps
@@ -20,7 +24,8 @@ Allows you to set a task through the Windows Task Scheduler to replace your Desk
      * `$removeTips` -> default `$TRUE;` whether to delete Spotlight tips
      * `$minSize` -> default `200kb;` the file size below which images will not be copied
      * `$imageLocation` -> default `"$($env:UserProfile)\Pictures\Saved Pictures\";` where to save images 
-     * `$backgroundLocation` = `"$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";` where current wallpaper is stored. Includes file name unlike above  
+     * `$backgroundFolder` -> default `"$($env:UserProfile)\AppData\Roaming\Microsoft\Windows\Themes";` where current wallpaper is stored
+     * `$backgroundLocation` -> default `"$($backgroundFolder)\TranscodedWallpaper";` current wallpaper file name
 
 3. Add a task to Windows Task Scheduler
    * Windows/Start -> start typing Scheduler, or run %windir%\system32\taskschd.msc /s
